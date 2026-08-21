@@ -1,0 +1,445 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
+}
+
+
+/* ================= MAIN CONTAINER ================= */
+
+.spotify-container {
+    min-height: 100vh;
+    padding-bottom: 90px;
+}
+
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 90px;
+
+    width: 240px;
+
+    background-color: #000;
+
+    padding: 25px 18px;
+
+    overflow-y: auto;
+}
+
+.spotify-logo {
+    color: #1db954;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.menu .nav-link {
+    color: #b3b3b3;
+    padding: 12px;
+    font-size: 16px;
+}
+
+.menu .nav-link i {
+    margin-right: 15px;
+}
+
+.menu .nav-link:hover,
+.menu .nav-link.active {
+    color: white;
+}
+
+.playlist-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.playlist-menu li {
+    margin: 15px 0;
+}
+
+.playlist-menu a {
+    color: #b3b3b3;
+    text-decoration: none;
+}
+
+.playlist-menu a:hover {
+    color: white;
+}
+
+
+/* ================= MAIN CONTENT ================= */
+
+.main-content {
+    margin-left: 240px;
+    min-height: calc(100vh - 90px);
+
+    background: linear-gradient(
+        #252525,
+        #121212 500px
+    );
+}
+
+
+/* ================= TOP BAR ================= */
+
+.top-bar {
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 10px 25px;
+}
+
+.search-box {
+    background-color: white;
+    border-radius: 25px;
+
+    width: 450px;
+
+    padding: 10px 18px;
+
+    color: #333;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    width: 90%;
+    margin-left: 8px;
+}
+
+.profile-btn {
+    margin-left: auto;
+
+    background-color: #000;
+    color: white;
+
+    border: none;
+    border-radius: 20px;
+
+    padding: 8px 15px;
+}
+
+
+/* ================= QUICK CARDS ================= */
+
+.quick-card {
+    background-color: #282828;
+
+    padding: 15px;
+
+    border-radius: 5px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.quick-card:hover {
+    background-color: #3a3a3a;
+}
+
+.quick-card i {
+    color: #1db954;
+    margin-right: 12px;
+}
+
+
+/* ================= SONG CARDS ================= */
+
+.section-title {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.song-card {
+    position: relative;
+
+    background-color: #181818;
+
+    padding: 16px;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+.song-card:hover {
+    background-color: #282828;
+    transform: translateY(-5px);
+}
+
+.song-card img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.song-card h5 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.song-card p {
+    color: #b3b3b3;
+    margin: 0;
+}
+
+.play-button {
+    position: absolute;
+
+    right: 20px;
+    bottom: 55px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: #1db954;
+
+    font-size: 25px;
+
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.song-card:hover .play-button {
+    opacity: 1;
+}
+
+
+/* ================= MUSIC PLAYER ================= */
+
+.music-player {
+    position: fixed;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 90px;
+
+    background-color: #181818;
+
+    border-top: 1px solid #333;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 12px 20px;
+
+    z-index: 1000;
+}
+
+
+/* Current Song */
+
+.current-song {
+    width: 25%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.current-song img {
+    width: 55px;
+    height: 55px;
+}
+
+.current-song div {
+    display: flex;
+    flex-direction: column;
+}
+
+.current-song small {
+    color: #b3b3b3;
+}
+
+.current-song .bi-heart {
+    margin-left: 10px;
+}
+
+
+/* Player Controls */
+
+.player-controls {
+    width: 50%;
+}
+
+.control-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.control-buttons button {
+    background: none;
+    border: none;
+
+    color: #b3b3b3;
+
+    font-size: 18px;
+}
+
+.control-buttons button:hover {
+    color: white;
+}
+
+.play-main {
+    background-color: white !important;
+
+    color: black !important;
+
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+}
+
+.progress-area {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 11px;
+    color: #b3b3b3;
+}
+
+.progress {
+    height: 4px;
+    flex: 1;
+
+    background-color: #555;
+}
+
+.progress-bar {
+    background-color: white;
+}
+
+
+/* Volume */
+
+.volume-control {
+    width: 25%;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.volume-control input {
+    width: 100px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        width: 70px;
+        padding: 20px 10px;
+    }
+
+    .spotify-logo {
+        font-size: 0;
+        text-align: center;
+    }
+
+    .spotify-logo i {
+        font-size: 28px;
+    }
+
+    .menu .nav-link {
+        text-align: center;
+        font-size: 0;
+    }
+
+    .menu .nav-link i {
+        font-size: 20px;
+        margin: 0;
+    }
+
+    .playlist-menu,
+    .sidebar hr,
+    .sidebar h6 {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 70px;
+    }
+
+    .search-box {
+        width: 250px;
+    }
+
+    .current-song {
+        width: 30%;
+    }
+
+    .player-controls {
+        width: 50%;
+    }
+
+    .volume-control {
+        width: 20%;
+    }
+}
+
+
+@media (max-width: 576px) {
+
+    .top-bar {
+        padding: 10px;
+    }
+
+    .search-box {
+        width: 160px;
+    }
+
+    .profile-btn {
+        display: none;
+    }
+
+    .current-song {
+        width: 25%;
+    }
+
+    .current-song div,
+    .current-song .bi-heart,
+    .volume-control {
+        display: none;
+    }
+
+    .player-controls {
+        width: 75%;
+    }
+
+}@charset "utf-8";
+/* CSS Document */
+
